@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: 'shared/header' %>
+    <section>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </section>
+    <main class="container">
+      <%= yield %>
+    </main>
   </body>
 </html>
