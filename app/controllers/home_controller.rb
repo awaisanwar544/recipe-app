@@ -1,5 +1,3 @@
 class HomeController < ApplicationController
-  def index
-    @logged = false
-  end
+  def index; end
 end
