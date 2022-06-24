@@ -7,5 +7,7 @@ class CreateRecipeFoods < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    add_index :recipe_foods, [:recipe, :food], unique: true
   end
 end
