@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   end
 
   resources :foods, only: [:index, :new, :create, :destroy]
+
+  patch '/recipes/:id/toggle_public', to: 'recipes#toggle_public', as: 'make_public'
 end
