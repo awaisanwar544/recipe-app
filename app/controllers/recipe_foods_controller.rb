@@ -20,7 +20,7 @@ class RecipeFoodsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     ingredient = RecipeFood.where(recipe_id: params[:recipe_id], food_id: params[:id])
     RecipeFood.destroy(ingredient.ids[0])
-    redirect_to recipe_path(@recipe), notice: "Ingredient Deleted"
+    redirect_to recipe_path(@recipe), notice: 'Ingredient Deleted'
   end
 
   private
