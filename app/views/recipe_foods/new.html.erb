@@ -1,0 +1,43 @@
+<h1>Add ingredient from the list</h1>
+<p>If you're unable to find the required ingredient. Then first add that ingredient in your foods list.</p>
+
+<% if @errors.present? %>
+  <div>
+    <ul>
+      <% @errors.each do |error| %>
+        <li> <%= error %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scooe="col">Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <%= form_with model: @recipe_food, url: recipe_recipe_foods_path, method: :post do |form| %>
+          <td>
+            <div>
+              <%= form.collection_select :food_id, current_user.foods.order(:name), :id, :name %>
+            </div>
+          </td>
+          <td>
+            <div class="d-flex flex-row">
+              <div>
+                <%= form.number_field :quantity, value: '1' %>
+              </div>
+              <div class="ms-5">
+                <%= form.submit "Add ingredient", class: "btn btn-primary" %>
+              </div>
+            </div>
+          </td>
+        <% end %>
+    </tr>
+  </tbody>
+</table>
