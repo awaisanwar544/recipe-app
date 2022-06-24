@@ -36,6 +36,12 @@ class RecipesController < ApplicationController
     redirect_to recipes_path, notice: "Deleted Recipe: #{recipe.name}"
   end
 
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    redirect_to recipe_path
+  end
+
   private
 
   def recipe_params
