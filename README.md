@@ -22,8 +22,8 @@ To get a local copy up and running follow these simple example steps.
   - Change to the desired directory then run the following:
 
     - run `git clone git@github.com:awaisanwar544/recipe-app.git`
-    - cd railsblog/ 
-    - git switch feature/setup-controllers
+    - cd recipe-app 
+    - git switch dev
     - run `bundle install`
     - run `rails db:create`
     - run `rails db:migrate`
