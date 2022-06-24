@@ -27,11 +27,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_102644) do
 
   create_table "recipe_foods", force: :cascade do |t|
     t.integer "quantity", null: false
-    t.bigint "recipe_id", null: false
+    t.bigint "recipe_id"
     t.bigint "food_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_id"], name: "index_recipe_foods_on_food_id"
+    t.index ["recipe_id", "food_id"], name: "index_recipe_foods_on_recipe_id_and_food_id", unique: true
     t.index ["recipe_id"], name: "index_recipe_foods_on_recipe_id"
   end
 
