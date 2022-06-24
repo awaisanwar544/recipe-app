@@ -1,0 +1,30 @@
+<% if @errors.present? %>
+  <div>
+    <ul>
+      <% @errors.each do |error| %>
+        <li> <%= error %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @food do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :measuring_unit %>
+    <%= form.text_field :measuring_unit %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

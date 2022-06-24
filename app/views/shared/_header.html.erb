@@ -1,7 +1,7 @@
 <header class="d-flex flex-row align-items-center justify-content-between p-2">
   <ul class="d-flex flex-row list-unstyled align-items-center">
     <% if user_signed_in? %>
-      <li class="p-2"> <%= link_to "Foods", '/', class: "nav-link" %></li>
+      <li class="p-2"> <%= link_to "Foods", foods_path, class: "nav-link" %></li>
       <li class="p-2"> <%= link_to "Recipes", recipes_path, class: "nav-link" %></li>
       <li class="p-2"> <%= link_to "Shoping List", '/', class: "nav-link" %></li>
     <% end %>

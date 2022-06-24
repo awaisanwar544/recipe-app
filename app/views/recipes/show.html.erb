@@ -15,10 +15,9 @@
     <p><%= @recipe.description %></p>
   </div>
   <% if @recipe.user == current_user %>
-    <div class="d-flex flex-row align-items-center justify-content-between col-4">
-      <%= link_to 'Back to Recipes', recipes_path, class: "btn btn-secondary" %>
-      <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-primary" %>
-      <%= button_to 'Delete', recipe_path(@recipe), class: "btn btn-danger", data: {
+    <div class="d-flex flex-row align-items-center">
+      <%= link_to 'Back to Recipes', recipes_path, class: "btn btn-secondary mr-2" %>
+      <%= button_to 'Delete', recipe_path(@recipe), class: "btn btn-danger mx-2", data: {
         confirm: "Are you sure want to delete #{@recipe.name}?",
       }, method: :delete %>
     </div>
