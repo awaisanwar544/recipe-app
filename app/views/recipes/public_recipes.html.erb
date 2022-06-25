@@ -1,0 +1,19 @@
+<h1>All Public Recipes</h1>
+<div>
+  <% @public_recipes.each do |recipe| %>
+    <div class="bg-light p-3 my-3">
+      <div class="d-flex flex-row align-items-center justify-content-between align-self-center col-6">
+        <h3> <%= link_to recipe.name, recipe_path(recipe) %></h3>
+        <p> Published by: <%= recipe.user.name %> </p>
+      </div>
+      <div>
+        <div>
+          <p>Preparation Time: <%= recipe.preparation_time %></p>
+          <p>Cooking Time: <%= recipe.cooking_time %></p>
+        </div>
+        <h4>Description:</h4>
+        <p><%= recipe.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
